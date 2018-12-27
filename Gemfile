@@ -5,6 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'pg', '~> 1.1.3'
+gem 'bootstrap', '~> 4.2.1'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6', '>= 5.1.6.1'
@@ -62,7 +68,7 @@ gem 'refinerycms', '~> 4.0'
 gem 'refinerycms-acts-as-indexed', ['~> 3.0', '>= 3.0.0']
 gem 'refinerycms-wymeditor', ['~> 2.0', '>= 2.0.0']
 gem 'refinerycms-authentication-devise', '~> 2.0'
-#  gem 'refinerycms-blog', ['~> 4.0', '>= 4.0.0']
+gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog.git', branch: 'master'
 #  gem 'refinerycms-inquiries', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-search', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-page-images', ['~> 4.0', '>= 4.0.0']
