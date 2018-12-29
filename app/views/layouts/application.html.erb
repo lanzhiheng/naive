@@ -5,14 +5,25 @@
     <%= render "/refinery/head" %>
     <%= render "/refinery/javascripts" %>
   </head>
-  <body id="<%= canonical_id @page %>" class="container">
+  <body id="<%= canonical_id @page %>">
     <%= site_bar -%>
     <div id="page_container">
       <header id="header" role="banner">
         <%= render "/refinery/header" -%>
       </header>
-      <main id="page" role="main">
-        <%= yield %>
+      <main id="page" role="main" class="mt-5">
+        <% # need to restore %>
+        <% yield %>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
+              <%= render "/refinery/main_content" %>
+            </div>
+            <div class="col-sm-4">
+              <%= render "/refinery/sidebar" %>
+            </div>
+          </div>
+        </div>
       </main>
       <footer role="contentinfo">
         <%= render "/refinery/footer" -%>
