@@ -2,6 +2,10 @@ body {
   background: #f9f9f9;
 }
 
+.markdown-body a {
+  color: $success;
+}
+
 .blog-image {
   width: 100%
 }
@@ -69,6 +73,10 @@ body {
 }
 
 
+.banner-image {
+  width: 100%;
+}
+
 .pagination {
   .page-link {
     color: $success;
@@ -98,4 +106,27 @@ body {
   input, button {
     border-radius: 0.1rem;
   }
+}
+
+/** detail page **/
+.detail-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  position: relative;
+
+  &:after {
+    content: "";
+    background: $success;
+    display: inline-block;
+    width: 0.66667em;
+    height: 0.03333em;
+    position: absolute;
+    bottom: -0.28333em;
+    left: 50%;
+    margin-left: -0.33333em;
+  }
+}
+
+.detail-content {
+  padding: 0 6.875rem;
 }
