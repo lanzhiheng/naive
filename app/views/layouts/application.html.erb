@@ -5,11 +5,11 @@
     <%= render "/refinery/javascripts" %>
   </head>
   <body id="<%= canonical_id @page %>">
-    <div id="page_container">
+    <div id="page_container" class="mt-3">
       <header id="header" role="banner">
         <%= render "/refinery/header" -%>
       </header>
-      <main id="page" role="main" style="margin-top: 6rem;">
+      <main id="page" role="main">
         <%= yield %>
       </main>
       <footer role="contentinfo">
