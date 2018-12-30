@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <section id="main_content" >
+        <div class="row">
+          <% 5.times do |i| %>
+          <%= render partial: "/refinery/list_item", locals: { :i => i } %>
+          <% end %>
+        </div>
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+        </ul>
+
+      </section>
+
+    </div>
+    <div class="col-sm-4">
+      <%= render "/refinery/sidebar" %>
+    </div>
+  </div>
+</div>

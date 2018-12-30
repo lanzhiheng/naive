@@ -1,0 +1,19 @@
+<div class="mb-4 col-6">
+  <div class="card border-0">
+    <img class="blog-image" src="https://via.placeholder.com/1200x900" alt="hello" />
+    <div class="card-body">
+      <h4 class="card-title mb-4 underline">
+        <a class="text-dark" href="/"><%= "Card title #{i}" %></a>
+      </h4>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="post-footer">
+        <span class="date"><%= Date.today %></span>
+        <span class="mx-3">|</span>
+        <span><i class="far fa-comment"></i>: <%= (Random.rand * 1000).to_i %></span>
+        <div class="mt-4">
+          <a href="#" role="button" class="btn btn-success btn-sm ">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

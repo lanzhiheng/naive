@@ -2,6 +2,9 @@ body {
   background: #f9f9f9;
 }
 
+.blog-image {
+  width: 100%
+}
 
 .card {
   border-radius: 0.15rem;
@@ -56,7 +59,6 @@ body {
   .btn-sm {
     text-transform: uppercase;
     padding: 0.2rem 0.7rem;
-    float: right;
   }
 }
 

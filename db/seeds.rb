@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Added by Refinery CMS Pages extension
-Refinery::Pages::Engine.load_seed
-
-# Added by Refinery CMS Blog engine
-Refinery::Blog::Engine.load_seed
+['Home', 'Blog', 'Event', 'About'].each do |page|
+  new_page = Refinery::Page.new(title: page, slug: page)
+  new_page.link_url = '/' if page == 'Home'
+  new_page.save
+end

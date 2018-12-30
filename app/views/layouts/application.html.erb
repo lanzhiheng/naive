@@ -10,18 +10,7 @@
         <%= render "/refinery/header" -%>
       </header>
       <main id="page" role="main" style="margin-top: 6rem;">
-        <% # need to restore %>
-        <% yield %>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8">
-              <%= render "/refinery/main_content" %>
-            </div>
-            <div class="col-sm-4">
-              <%= render "/refinery/sidebar" %>
-            </div>
-          </div>
-        </div>
+        <%= yield %>
       </main>
       <footer role="contentinfo">
         <%= render "/refinery/footer" -%>
