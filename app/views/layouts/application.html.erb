@@ -1,17 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <%= render "/refinery/html_tag" %>
-  <% site_bar = render('/refinery/site_bar', :head => true) -%>
   <head>
     <%= render "/refinery/head" %>
     <%= render "/refinery/javascripts" %>
   </head>
   <body id="<%= canonical_id @page %>">
-    <%= site_bar -%>
     <div id="page_container">
       <header id="header" role="banner">
         <%= render "/refinery/header" -%>
       </header>
-      <main id="page" role="main" class="mt-5">
+      <main id="page" role="main" style="margin-top: 6rem;">
         <% # need to restore %>
         <% yield %>
         <div class="container">
