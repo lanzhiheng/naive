@@ -82,3 +82,18 @@ body {
     border-bottom-right-radius: 0.15rem;
   }
 }
+
+.info-section {
+  .card-title {
+    border-left: 2px solid $success;
+    padding-left: 0.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
+
+#search_box {
+  input, button {
+    border-radius: 0.1rem;
+  }
+}
