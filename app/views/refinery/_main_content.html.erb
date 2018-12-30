@@ -1,27 +1,30 @@
-<section id="main_content">
+<section id="main_content" class="row">
   <% 5.times do |i| %>
-  <div class="row mb-4">
+  <div class="mb-4">
     <div class="card border-0">
       <div class="card-body">
-        <h4 class="card-title">Card title <%= "#{i}" %></h4>
+        <div class="button-group tags-list">
+          <a href="#" role="button" class="btn btn-success btn-sm active">tag1</a>
+          <a href="#" role="button" class="btn btn-success btn-sm active">tag2</a>
+        </div>
+        <h4 class="card-title mt-3 mb-4 underline">
+          <a class="text-dark" href="/"><%= "Card title #{i}" %></a>
+        </h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="post-footer">
+          <span class="date"><%= Date.today %></span>
+          <span class="mx-3">|</span>
+          <span>comments: 32</span>
+          <a href="#" role="button" class="btn btn-success btn-sm active">Read More</a>
+        </div>
       </div>
     </div>
   </div>
   <% end %>
-</section>
-
-<nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item disabled"><a class="page-link" href="#">1</a></li>
     <li class="page-item"><a class="page-link" href="#">2</a></li>
     <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
   </ul>
-</nav>
+
+</section>

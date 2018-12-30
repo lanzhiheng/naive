@@ -2,17 +2,83 @@ body {
   background: #f9f9f9;
 }
 
+
 .card {
   border-radius: 0.15rem;
 
   .card-body {
     padding: 1.25rem 15px;
   }
+
+  .btn-sm {
+    border-radius: 0.1rem;
+  }
 }
 
+.tags-list {
+  .btn-sm {
+    padding: 0.25rem 0.7rem;
+    font-size: 0.7rem;
+    line-height: 1;
+  }
+}
+
+.underline {
+  position: relative;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: $success;
+    width: 1rem;
+
+    position: absolute;
+    bottom: -0.5rem;
+  }
+}
+
+.card-text {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.post-footer {
+  color: #ddd;
+  font-size: 0.875rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f1f1f1;
+
+  .btn-sm {
+    text-transform: uppercase;
+    padding: 0.2rem 0.7rem;
+    float: right;
+  }
+}
 
 @media (min-width: 1200px) {
   .container {
     max-width: 980px;
+  }
+}
+
+
+.pagination {
+  .page-link {
+    color: $success;
+  }
+
+  .page-item:first-child .page-link {
+    border-top-left-radius: 0.15rem;
+    border-bottom-left-radius: 0.15rem;
+  }
+
+  .page-item:last-child .page-link {
+    border-top-right-radius: 0.15rem;
+    border-bottom-right-radius: 0.15rem;
   }
 }
