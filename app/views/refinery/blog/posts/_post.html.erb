@@ -1,0 +1,29 @@
+<% content_for :stylesheets, stylesheet_link_tag('blog_page') %>
+
+<article class="container blog-post">
+  <div class="button-group tags-list text-center">
+    <% @post.tags.each do |post| %>
+    <%= link_to post.name, '/', class: "btn btn-success btn-sm", role: "button" %>
+    <% end %>
+  </div>
+  <h1 class="detail-title text-center my-4"><%= @post.title %></h1>
+  <section class="post-details my-3">
+    <time datetime="<%=l @post.published_at.to_date, :format => :default %>" class="posted_at">
+      <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(@post.published_at.to_date)) %>
+    </time>
+  </section>
+  <img src="https://placekitten.com/1366/768" class="banner-image" />
+  <div class="detail-content mt-5">
+    <div class="detail-content-inner border-top py-5">
+      <article class="markdown-body">
+        <%= @post.body.html_safe %>
+      </article>
+    </div>
+    <footer class="post-footer p-3 border" style="border-radius: 1px;">
+      Categories:
+      <% @post.categories.each do |category| %>
+      <%= link_to category.title, '/' %>
+      <% end %>
+    </footer>
+  </div>
+</article>

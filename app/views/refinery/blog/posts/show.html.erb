@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <div id="show_blog_post">
+    <%= render 'post' %>
+  </div>
+
+  <%= render 'comments' %>
+<% end %>
+
+<%= render '/refinery/blog/shared/body_content_right' %>
+
+<%= render "/refinery/content_page", :remove_automatic_sections => true %>

@@ -30,4 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  refinery:
+    blog:
+      posts:
+        show:
+          comments:
+            add: Leave a Reply
+          name: Name*
+          email: Email*
+          submit: Post Comment
   hello: "Hello world"

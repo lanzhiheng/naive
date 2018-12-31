@@ -1,3 +1,5 @@
+$detail-color: #ececec;
+
 body {
   background: #f9f9f9;
   padding-top: 4.5rem;
@@ -56,10 +58,15 @@ body {
 }
 
 .post-footer {
-  color: #ddd;
+  color: $detail-color;
   font-size: 0.875rem;
   padding-top: 0.5rem;
   border-top: 1px solid #f1f1f1;
+
+  a {
+    text-decoration: underline;
+    color: $success;
+  }
 
   .btn-sm {
     text-transform: uppercase;
@@ -111,7 +118,7 @@ body {
 
 /** detail page **/
 .detail-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 800;
   position: relative;
 
@@ -130,4 +137,48 @@ body {
 
 .detail-content {
   padding: 0 6.875rem;
+}
+
+.post-details {
+  text-align: center;
+  font-size: 0.875rem;
+  color: $detail-color;
+}
+
+.comments {
+  width: 600px;
+  margin: 30px auto;
+
+  form {
+    label {
+      margin: 0;
+      color: #575757;
+    }
+
+    input, textarea {
+      width: 100%;
+      display: block;
+      margin: 0.2rem auto 1.5rem;
+      border: 1px solid $detail-color;
+      border-radius: 2px;
+      padding: 0.3rem 0.5rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input {
+      line-height: 1.8rem;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    input[type=submit] {
+      width: auto;
+      margin: 1.5rem 0 1rem auto;
+    }
+  }
 }
