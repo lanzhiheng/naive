@@ -1,5 +1,3 @@
-<% content_for :stylesheets, stylesheet_link_tag('blog_page') %>
-
 <article class="container blog-post">
   <div class="button-group tags-list text-center">
     <% @post.tags.each do |post| %>
@@ -19,11 +17,17 @@
         <%= @post.body.html_safe %>
       </article>
     </div>
-    <footer class="post-footer p-3 border" style="border-radius: 1px;">
-      Categories:
-      <% @post.categories.each do |category| %>
-      <%= link_to category.title, '/' %>
-      <% end %>
+    <footer class="post-footer p-3 border d-flex justify-content-between" style="border-radius: 1px;">
+      <span class="categories">
+        Categories:
+        <% @post.categories.each do |category| %>
+        <%= link_to category.title, '/' %>
+        <% end %>
+      </span>
+      <span class="author">
+        <%= image_tag 'avatar.png' %>
+        Written by: <%= link_to @post.author, '/about', target: '_blank'  %>
+      </span>
     </footer>
   </div>
 </article>

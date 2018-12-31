@@ -13,5 +13,5 @@ Refinery::Blog.configure do |config|
 
   # If you're grafting onto an existing app, change this to your User class
   # (eg: Refinery::Blog.user_class = "Refinery::Authentication::Devise::User" )
-  # Refinery::Blog.user_class = ""
+  Refinery::Blog.user_class = "Refinery::Authentication::Devise::User"
 end

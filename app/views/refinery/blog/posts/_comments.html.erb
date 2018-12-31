@@ -1,25 +1,23 @@
 <aside id="comments" class="comments">
   <% if (comments = @post.comments.approved).any? %>
-    <h2><%= t('title', :scope => 'refinery.blog.posts.show.comments') %></h2>
+    <h4><%= t('title', :scope => 'refinery.blog.posts.show.comments') %></h4>
     <%= render :partial => "comment", :collection => comments %>
   <% end %>
 
   <% if Refinery::Blog::Post.comments_allowed? %>
-
     <% flash.each do |key, value| %>
       <div id="flash" class="flash flash_<%= key %>">
         <%= value %>
       </div>
     <% end %>
 
-    <h2><%= t('add', :scope => 'refinery.blog.posts.show.comments') %></h2>
-    <h3><%=  %>
+    <h4 class="mt-4"><%= t('add', :scope => 'refinery.blog.posts.show.comments') %></h4>
     <%= form_for [refinery, :blog, @comment] do |f| %>
       <%= render "/refinery/admin/error_messages",
                  :object => f.object,
                  :include_object_name => true %>
       <div class="field message_field">
-        <%= f.text_area :message, :rows => 5 %>
+        <%= f.text_area :message, :rows => 7 %>
       </div>
       <div class="field">
         <%= f.label :name, t('name', :scope => 'refinery.blog.posts.show') %>
