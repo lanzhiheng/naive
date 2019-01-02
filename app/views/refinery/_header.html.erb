@@ -6,12 +6,7 @@
     </button>
     <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
       <ul class="navbar-nav">
-        <% Refinery::Page.fast_menu.each do |menu| %>
-          <% path = menu.link_url.present? ? menu.link_url : "/#{menu.slug}" %>
-          <li class="nav-item mx-2">
-          <a class="nav-link <%= 'active' if path == request.path %>" href="<%= path %>"><%= menu.title %></a>
-        </li>
-      <% end %>
+        <%= menu_list(request.path) %>
       </ul>
     </div>
   </div>
