@@ -8,7 +8,7 @@ RSpec.describe ApplicationHelper, type: 'helper' do
   end
 
   after(:all) do
-    Refinery::Page.all.each &:destroy!
+    Refinery::Page.all.each(&:destroy!)
   end
 
   it 'should render menu list' do
@@ -21,5 +21,12 @@ RSpec.describe ApplicationHelper, type: 'helper' do
     expect(active_class('/blog', '/blog')).to eq('active')
     expect(active_class('/blog/abc/1', '/blog')).to eq('active')
     expect(active_class('/', '/blog')).to eq('')
+  end
+
+  it 'fontawesome and github markdown helper' do
+    expect(foreign_link_resource).to include('fontawesome')
+    expect(foreign_link_resource).to include('integrity')
+    expect(foreign_link_resource).to include('crossorigin')
+    expect(foreign_link_resource).to include('github-markdown')
   end
 end

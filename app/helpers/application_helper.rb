@@ -17,4 +17,17 @@ module ApplicationHelper
     end
     ''
   end
+
+  # Some resource from external link
+  def foreign_link_resource
+    fontawesome = stylesheet_link_tag(
+      "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
+      integrity: 'sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/',
+      crossorigin: 'anonymous'
+    )
+
+    github_markdown = stylesheet_link_tag( "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css")
+
+    [fontawesome, github_markdown].join('').html_safe
+  end
 end
