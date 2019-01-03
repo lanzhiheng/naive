@@ -2,24 +2,9 @@ require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: 'helper' do
   before(:all) do
-    @page1 = Refinery::Page.create(
-      title: 'home',
-      show_in_menu: true,
-      link_url: '/',
-      slug: '/'
-    )
-
-    @page2 = Refinery::Page.create(
-      title: 'blog',
-      show_in_menu: true,
-      slug: '/blog'
-    )
-
-    @page3 = Refinery::Page.create(
-      title: 'about',
-      show_in_menu: false,
-      slug: '/about'
-    )
+    create(:home)
+    create(:blog)
+    create(:about)
   end
 
   after(:all) do

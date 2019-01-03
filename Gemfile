@@ -11,7 +11,6 @@ gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6', '>= 5.1.6.1'
 # Use sqlite3 as the database for Active Record
@@ -49,6 +48,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry'
   gem 'rspec-rails', '~> 3.8'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do
