@@ -14,11 +14,9 @@ describe Refinery::Blog::PostsController, :type => :controller do
   after(:all) do
     Refinery::Blog::Post.destroy_all
     ActsAsTaggableOn::Tag.destroy_all
-    Refinery::Authentication::Devise::User.destroy_all
   end
 
   it "tagged action" do
-    # get :tagged
     expect(true).to eq(true)
   end
 end

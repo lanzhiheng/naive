@@ -6,14 +6,8 @@ FactoryBot.define do
     password { 'naive' }
   end
 
-  factory :evil, class: Refinery::Authentication::Devise::User do
-    username { "evil" }
-    email { "evil@xxx.com" }
-    password { 'evil' }
-  end
-
   factory :docker, class: Refinery::Blog::Post do
-    association :author, factory: :naive
+    association :author, factory: :naive, strategy: :build
     title { "Docker" }
     body { "<div>Hello Docker</div>"}
     created_at { Time.now - 1.day }
@@ -22,7 +16,7 @@ FactoryBot.define do
   end
 
   factory :ruby, class: Refinery::Blog::Post do
-    association :author, factory: :evil
+    association :author, factory: :naive, strategy: :build
     title { "Ruby" }
     body { "<div>Hello Ruby</div>"}
     created_at { Time.now - 1.day }
