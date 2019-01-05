@@ -1,7 +1,7 @@
 <article class="container blog-post">
   <div class="button-group tags-list text-center">
-    <% @post.tags.each do |post| %>
-    <%= link_to post.name, '/', class: "btn btn-success btn-sm", role: "button" %>
+    <% @post.tags.each do |tag| %>
+    <%= link_to tag.name, refinery.blog_tagged_posts_path(tag.id), class: "btn btn-success btn-sm", role: "button" %>
     <% end %>
   </div>
   <h1 class="detail-title text-center my-4"><%= @post.title %></h1>
