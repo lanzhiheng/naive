@@ -1,4 +1,4 @@
-<% content_for :stylesheets, stylesheet_link_tag('blog_page') %>
+<% content_for :stylesheets, stylesheet_link_tag('blog_page', :'data-turbolinks-track' => "reload") %>
 
 <div id="show_blog_post">
   <%= render 'post' %>
