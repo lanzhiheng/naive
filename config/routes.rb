@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   # configuration option `mounted_path` to something different in config/initializers/refinery/core.rb
   #
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
+
   mount Refinery::Core::Engine, at: Refinery::Core.mounted_path
+
+  Refinery::Core::Engine.routes.draw do
+    namespace :blog, path: Refinery::Blog.page_url do
+      get 'tagged/:tag_name', :to => 'posts#tagged_by_name', :as => 'tagged'
+    end
+  end
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
