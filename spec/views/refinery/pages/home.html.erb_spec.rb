@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "refinery/pages/home" do
-  before(:all) do
+  before(:each) do
     assign(:pages, [
              create(:home)
            ])
@@ -13,12 +13,6 @@ RSpec.describe "refinery/pages/home" do
              create(:tech),
              create(:live),
            ])
-  end
-
-  after(:all) do
-    Refinery::Page.all.each(&:destroy!)
-    Refinery::Blog::Category.destroy_all
-    Refinery::Blog::Post.destroy_all
   end
 
   it "displays categories in home page" do

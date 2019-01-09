@@ -1,14 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: 'helper' do
-  before(:all) do
+  before(:each) do
     create(:home)
     create(:blog)
     create(:about)
-  end
-
-  after(:all) do
-    Refinery::Page.all.each(&:destroy!)
   end
 
   it 'should render menu list' do

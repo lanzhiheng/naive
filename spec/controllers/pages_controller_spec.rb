@@ -3,7 +3,8 @@ require "rails_helper"
 module Refinery
   describe PagesController, :type => :controller do
     routes { Refinery::Core::Engine.routes }
-    before(:all) do
+
+    before(:each) do
       @home = create(:home)
       @blog = create(:blog)
       @about = create(:about)
@@ -15,11 +16,6 @@ module Refinery
       @docker = create(:docker, draft: true)
     end
 
-    after(:all) do
-      Refinery::Page.all.each(&:destroy!)
-      Refinery::Blog::Category.destroy_all
-      Refinery::Blog::Post.destroy_all
-    end
 
     it "home page with @pages" do
       get :home

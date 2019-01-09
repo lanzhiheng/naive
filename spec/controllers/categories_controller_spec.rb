@@ -4,7 +4,7 @@ module Refinery
   module Blog
     describe CategoriesController, :type => :controller do
       routes { Refinery::Core::Engine.routes }
-      before(:all) do
+      before(:each) do
         @tech = create(:tech)
         @live = create(:live)
 
@@ -12,11 +12,6 @@ module Refinery
         @docker.categories << @tech
         @ruby = create(:ruby, draft: false)
         @ruby.categories << @tech
-      end
-
-      after(:all) do
-        Refinery::Blog::Post.destroy_all
-        Refinery::Blog::Category.destroy_all
       end
 
       it "@posts in categories page" do

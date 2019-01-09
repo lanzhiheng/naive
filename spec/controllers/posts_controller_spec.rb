@@ -5,7 +5,7 @@ module Refinery
     describe PostsController, :type => :controller do
       # We need to specify the routes engine
       routes { Refinery::Core::Engine.routes }
-      before(:all) do
+      before(:each) do
         # tag
         @container = build(:container)
         @rails = build(:rails)
@@ -17,11 +17,6 @@ module Refinery
 
         @docker.tags << [@container, @language]
         @ruby.tags << [@rails, @language]
-      end
-
-      after(:all) do
-        Refinery::Blog::Post.destroy_all
-        ActsAsTaggableOn::Tag.destroy_all
       end
 
       it "@posts in tagged page" do
