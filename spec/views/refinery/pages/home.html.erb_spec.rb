@@ -15,10 +15,16 @@ RSpec.describe "refinery/pages/home" do
            ])
   end
 
+  after(:all) do
+    Refinery::Page.all.each(&:destroy!)
+    Refinery::Blog::Category.destroy_all
+    Refinery::Blog::Post.destroy_all
+  end
+
   it "displays categories in home page" do
     render
-    expect(rendered).to match /<h6 class="card-title">Category<\/h6>/
-    expect(rendered).to match /href="#{refinery.blog_category_path(build(:tech))}"/
-    expect(rendered).to match /href="#{refinery.blog_category_path(build(:live))}"/
+    expect(rendered).to match(/<h6 class="card-title">Category<\/h6>/)
+    expect(rendered).to match(/href="#{refinery.blog_category_path(build(:tech))}"/)
+    expect(rendered).to match(/href="#{refinery.blog_category_path(build(:live))}"/)
   end
 end

@@ -2,7 +2,8 @@ require "rails_helper"
 
 module Refinery
   module Blog
-    describe 'categories', :type => :request do
+    describe CategoriesController, :type => :controller do
+      routes { Refinery::Core::Engine.routes }
       before(:all) do
         @tech = create(:tech)
         @live = create(:live)
@@ -19,10 +20,10 @@ module Refinery
       end
 
       it "@posts in categories page" do
-        get refinery.blog_category_path(@tech)
+        get :show, params: { id: @tech.slug }
         expect(assigns(:posts).size).to eq(2)
 
-        get refinery.blog_category_path(@live)
+        get :show, params: { id: @live.slug }
         expect(assigns(:posts).size).to eq(0)
       end
     end
