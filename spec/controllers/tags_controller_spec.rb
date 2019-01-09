@@ -2,7 +2,9 @@ require "rails_helper"
 
 module Refinery
   module Blog
-    describe 'Tag', :type => :request do
+    describe PostsController, :type => :controller do
+      # We need to specify the routes engine
+      routes { Refinery::Core::Engine.routes }
       before(:all) do
         @container = build(:container)
         @rails = build(:rails)
@@ -20,11 +22,11 @@ module Refinery
       end
 
       it "@posts in tagged page" do
-        get refinery.blog_tagged_path(@rails.name)
+        get :tagged_by_name, { params: { tag_name: @rails.name } }
         expect(assigns(:posts).size).to eq(0)
         expect(assigns(:tag)).to eq(@rails)
 
-        get refinery.blog_tagged_path(@language.name)
+        get :tagged_by_name, { params: { tag_name: @language.name } }
         expect(assigns(:posts).size).to eq(1)
         expect(assigns(:tag)).to eq(@language)
         expect(assigns(:posts)).to include(@docker)
