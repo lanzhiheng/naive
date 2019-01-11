@@ -1,11 +1,6 @@
 <section id="main_content">
   <% @posts.each do |post| %>
-  <%= render partial: '/refinery/long_list_item', locals: { post: post } %>
+    <%= render partial: '/refinery/long_list_item', locals: { post: post } %>
   <% end %>
-
-  <ul class="pagination">
-    <li class="page-item disabled"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-  </ul>
+  <%= will_paginate @posts %>
 </section>
