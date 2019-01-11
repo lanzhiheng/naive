@@ -1,19 +1,20 @@
 <div class="mb-4">
-  <div class="card border-0">
+  <div class="card border-0 post">
     <div class="card-body">
       <div class="button-group tags-list">
-        <a href="#" role="button" class="btn btn-success btn-sm ">tag1</a>
-        <a href="#" role="button" class="btn btn-success btn-sm ">tag2</a>
+        <% post.tags.each do |tag| %>
+        <a href="<%= refinery.blog_tagged_path(tag.name) %>" role="button" class="btn btn-success btn-sm "><%= tag.name %></a>
+        <% end %>
       </div>
       <h4 class="card-title mt-3 mb-4 underline">
-        <a class="text-dark" href="/"><%= "Card title #{i}" %></a>
+        <a class="text-dark" href="/"><%= post.title %></a>
       </h4>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text"><%= post.custom_teaser.presence || "Without teaser now."  %></p>
       <div class="post-footer">
-        <span class="date"><%= Date.today %></span>
+        <span class="date"><%= post.published_at.strftime('%Y-%m-%d') %></span>
         <span class="mx-3">|</span>
-        <span><i class="far fa-comment"></i>: <%= (Random.rand * 1000).to_i %></span>
-        <a href="#" role="button" class="btn btn-success btn-sm float-right">Read More</a>
+        <span><i class="far fa-comment"></i>: <%= post.comments.size %></span>
+        <a href="<%= refinery.blog_post_path(post.id) %>" role="button" class="btn btn-success btn-sm float-right">Read More</a>
       </div>
     </div>
   </div>

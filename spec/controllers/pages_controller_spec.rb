@@ -6,8 +6,6 @@ module Refinery
 
     before(:each) do
       @home = create(:home)
-      @blog = create(:blog)
-      @about = create(:about)
 
       @tech = create(:tech)
       @live = create(:live)
@@ -16,12 +14,17 @@ module Refinery
       @docker = create(:docker, draft: true)
     end
 
-
     it "home page with @pages" do
       get :home
       expect(response.status).to eq(200)
-      expect(assigns[:pages].length).to eq(1)
-      expect(assigns[:pages].first.title).to eq(@ruby.title)
+      expect(assigns[:page].title).to eq(@home.title)
+    end
+
+    it "home page with @post" do
+      get :home
+      expect(response.status).to eq(200)
+      expect(assigns[:posts].length).to eq(1)
+      expect(assigns[:posts].first.title).to eq(@ruby.title)
     end
 
     it "home page with @categories by load_categories method" do

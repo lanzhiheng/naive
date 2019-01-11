@@ -1,6 +1,6 @@
 <section id="main_content">
-  <% 5.times do |i| %>
-  <%= render partial: '/refinery/long_list_item', locals: { :i =>  i } %>
+  <% @posts.each do |post| %>
+  <%= render partial: '/refinery/long_list_item', locals: { post: post } %>
   <% end %>
 
   <ul class="pagination">

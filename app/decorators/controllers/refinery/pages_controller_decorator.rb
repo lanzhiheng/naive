@@ -9,7 +9,7 @@ module Refinery
     end
 
     def load_posts
-      @pages =  Refinery::Blog::Post.live.page(params[:page])
+      @posts =  Refinery::Blog::Post.live.page(params[:page])
     end
   end
 end
