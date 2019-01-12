@@ -17,10 +17,7 @@ RSpec.describe "refinery/pages/home" do
     @docker.tags << [@container, @language]
     @ruby.tags << [@rails, @language]
 
-    assign(:posts, [
-             @docker,
-             @ruby
-           ])
+    assign(:posts, Refinery::Blog::Post.live.page(1))
     assign(:categories, [
              create(:tech),
              create(:live),
