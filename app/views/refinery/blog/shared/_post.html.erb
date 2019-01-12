@@ -6,7 +6,7 @@
       <h4 class="card-title mb-4 underline">
         <a class="text-dark" href="<%= refinery.blog_post_path(post) %>"><%= post.title %></a>
       </h4>
-      <p class="card-text"><%= post.custom_teaser %></p>
+      <p class="card-text"><%= post.intro %></p>
       <div class="post-footer">
         <span class="date"><%= post.published_at.strftime('%Y-%m-%d') %></span>
         <span class="mx-3">|</span>

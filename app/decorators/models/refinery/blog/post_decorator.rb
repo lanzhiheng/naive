@@ -3,6 +3,11 @@ Refinery::Blog::Post.class_eval do
     markdown_to_html(body)
   end
 
+  def intro
+    return custom_teaser if custom_teaser.present?
+    markdown_to_html(body).strip_html_tags.truncate(100)
+  end
+
   def should_generate_new_friendly_id?
     will_save_change_to_attribute?(:custom_url) || will_save_change_to_attribute?(:title)
   end

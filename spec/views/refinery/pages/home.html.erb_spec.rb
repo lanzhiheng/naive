@@ -44,7 +44,7 @@ RSpec.describe "refinery/pages/home" do
     expect(rendered).to have_text(@language.name)
 
     # Teaser
-    expect(rendered).to have_text(@docker.custom_teaser)
-    expect(rendered).to have_text("Without teaser now.")
+    expect(rendered).to have_text(@docker.intro)
+    expect(rendered).to have_text(@ruby.intro)
   end
 end
