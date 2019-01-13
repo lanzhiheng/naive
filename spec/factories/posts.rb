@@ -6,6 +6,16 @@ FactoryBot.define do
     password { 'naive' }
   end
 
+  factory :basic, class: Refinery::Blog::Post do
+    association :author, factory: :naive, strategy: :build
+    title { "1" }
+    body { "1" }
+    draft { false }
+    created_at { Time.now - 1.day }
+    updated_at { Time.now - 1.day }
+    published_at { Time.now - 1.day }
+  end
+
   factory :docker, class: Refinery::Blog::Post do
     association :author, factory: :naive, strategy: :build
     title { "Docker" }

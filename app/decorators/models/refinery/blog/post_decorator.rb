@@ -12,6 +12,20 @@ Refinery::Blog::Post.class_eval do
     will_save_change_to_attribute?(:custom_url) || will_save_change_to_attribute?(:title)
   end
 
+  class << self
+    def search(search_string)
+      live.includes(:tags).where(
+        'refinery_blog_post_translations.title ILIKE (?) OR
+        refinery_blog_post_translations.body ILIKE (?) OR
+        tags.name ILIKE (?)
+        ',
+        "%#{search_string}%",
+        "%#{search_string}%",
+        "%#{search_string}%"
+      ).references(:tags)
+    end
+  end
+
   private
   def markdown_to_html(markdown)
     @markdown_renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
