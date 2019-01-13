@@ -14,7 +14,7 @@ Refinery::Blog::Post.class_eval do
 
   class << self
     def search(search_string)
-      live.includes(:tags).where(
+      includes(:translations).live.includes(:tags).where(
         'refinery_blog_post_translations.title ILIKE (?) OR
         refinery_blog_post_translations.body ILIKE (?) OR
         tags.name ILIKE (?)
