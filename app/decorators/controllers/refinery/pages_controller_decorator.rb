@@ -6,7 +6,7 @@ module Refinery
 
     private
     def load_search
-      @posts = Refinery::Blog::Post.search(params[:q])
+      @posts = Refinery::Blog::Post.search(params[:q]).page(params[:page])
     end
 
     def load_categories

@@ -1,3 +1,6 @@
+<% if @page.slug == 'search' %>
+<%= render 'search' %>
+<% else %>
 <div id="show" class="container">
   <h1 class="detail-title text-center mb-5">About</h1>
   <img src="https://placekitten.com/1366/768" class="banner-image" />
@@ -13,3 +16,4 @@
     </div>
   </div>
 </div>
+<% end %>
