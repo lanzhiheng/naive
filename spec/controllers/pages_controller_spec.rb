@@ -32,7 +32,8 @@ module Refinery
       @life = create(:basic, title: 'life', body: 'About life', draft: false)
       @person = create(:basic, title: 'person', body: 'About person', draft: false)
 
-      get :show, params: { path: 'search', q: 'About' }      expect(response.status).to eq(200)
+      get :show, params: { path: 'search', q: 'About' }
+      expect(response.status).to eq(200)
       expect(assigns[:posts].length).to eq(2)
     end
 
