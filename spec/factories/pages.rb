@@ -18,5 +18,10 @@ FactoryBot.define do
     show_in_menu { false }
     slug { '/about' }
   end
+
+  factory :search, class: Refinery::Page do
+    title { "search" }
+    slug { '/search' }
+  end
 end
 

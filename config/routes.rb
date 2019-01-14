@@ -9,16 +9,11 @@ Rails.application.routes.draw do
   mount Refinery::Core::Engine, at: Refinery::Core.mounted_path
 
   Refinery::Core::Engine.routes.draw do
+    get 'search', to: 'pages#search'
     namespace :blog, path: Refinery::Blog.page_url do
       get 'tagged/:tag_name', to: 'posts#tagged_by_name', as: :tagged
     end
   end
-
-
-  # resources :photos do
-  #   get :preview
-  # end
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
