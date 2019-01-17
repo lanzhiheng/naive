@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6', '>= 5.1.6.1'
+gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
@@ -66,13 +66,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Refinery CMS
-gem 'refinerycms', '~> 4.0'
-
+gem 'refinerycms', git: 'https://github.com/refinery/refinerycms.git', branch: 'master'
+gem 'refinerycms-authentication-devise', git: 'https://github.com/refinery/refinerycms-authentication-devise.git', branch: 'master'
 # Optionally, specify additional Refinery CMS Extensions here:
-gem 'refinerycms-acts-as-indexed', ['~> 3.0', '>= 3.0.0']
-gem 'refinerycms-wymeditor', ['~> 2.0', '>= 2.0.0']
-gem 'refinerycms-authentication-devise', '~> 2.0'
-gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog.git', branch: 'master'
+gem 'refinerycms-blog', git: 'git@github.com:lanzhiheng/refinerycms-blog.git', branch: 'fix-n-plus-one-issue-and-remove-some-useless-code'
 #  gem 'refinerycms-inquiries', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-search', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-page-images', ['~> 4.0', '>= 4.0.0']
