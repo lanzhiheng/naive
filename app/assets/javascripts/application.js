@@ -16,3 +16,10 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require_self
+
+$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
