@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'pg', '~> 1.1.3'
+gem 'mysql2'
 gem 'bootstrap', '~> 4.2.1'
 gem 'redcarpet', '~> 2.3.0'
 
@@ -65,11 +66,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+
+
 # Refinery CMS
 gem 'refinerycms', git: 'https://github.com/refinery/refinerycms.git', branch: 'master'
 gem 'refinerycms-authentication-devise', git: 'https://github.com/refinery/refinerycms-authentication-devise.git', branch: 'master'
+
 # Optionally, specify additional Refinery CMS Extensions here:
-gem 'refinerycms-blog', git: 'git@github.com:lanzhiheng/refinerycms-blog.git', branch: 'fix-n-plus-one-issue-and-remove-some-useless-code'
+gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog.git', branch: 'feature/refinery-5'
 #  gem 'refinerycms-inquiries', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-search', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-page-images', ['~> 4.0', '>= 4.0.0']

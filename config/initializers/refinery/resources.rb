@@ -9,12 +9,15 @@ Refinery::Resources.configure do |config|
   # Configure how many resources per page should be displayed in the list of resources in the admin area
   # config.pages_per_admin_index = 20
 
+  # Configure white-listed mime types for validation
+  # config.whitelisted_mime_types = ["audio/mp4", "audio/mpeg", "audio/wav", "audio/x-wav", "image/gif", "image/jpeg", "image/png", "image/svg+xml", "image/tiff", "image/x-psd", "video/mp4", "video/mpeg", "video/quicktime", "video/x-msvideo", "video/x-ms-wmv", "text/csv", "text/plain", "application/pdf", "application/rtf", "application/x-rar", "application/zip", "application/vnd.ms-excel", "application/vnd.ms-powerpoint", "application/vnd.msword", "application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
+
   # Configure Dragonfly.
   # Refer to config/initializers/refinery/dragonfly.rb for the full list of dragonfly configurations which can be used.
   # This includes all dragonfly config for Dragonfly v 1.1.1
 
   # config.dragonfly_verify_urls     = true
-  # config.dragonfly_secret          = "83c072984e3c9a89e421dc849114ea87260c52ad6af221c7"
+  # config.dragonfly_secret          = "14735dac5a2a35b17dac72308e1c0371186eb82f5563ab42"
   # config.dragonfly_url_host        = ""
   # config.dragonfly_datastore_root_path = "/Users/lan/Personal/naive/public/system/refinery/resources"
   # config.dragonfly_url_format       = "/system/refinery/resources/:job/:basename.:ext"

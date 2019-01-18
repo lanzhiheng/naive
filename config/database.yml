@@ -18,7 +18,7 @@ development:
   database: <%= Rails.application.engine_name.gsub(/_application/,'').downcase %>_development
   pool: 5
   username: lan
-  password: 
+  password:
   min_messages: warning
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -45,7 +45,7 @@ test:
   database: <%= Rails.application.engine_name.gsub(/_application/,'').downcase %>_test
   pool: 5
   username: lan
-  password: 
+  password:
   min_messages: warning
 
 production:

@@ -16,7 +16,10 @@ Refinery::Pages.configure do |config|
 
   # You can specify reserved words that won't be used as page slugs.
   # This only applies when marketable_urls is enabled.
-  # config.friendly_id_reserved_words = ["index", "new", "session", "login", "logout", "users", "refinery", "admin", "images", "wymiframe"]
+  # config.friendly_id_reserved_words = ["index", "new", "session", "login", "logout", "users", "refinery", "admin", "images", "rails"]
+
+  # You can specify reserved paths that won't interfere with others routes like ActiveStorage route
+  # config.reserved_paths = ["/rails/active_storage"]
 
   # Configure how many pages per page should be displayed when a dialog is presented that contains a links to pages
   # config.pages_per_dialog = 14
@@ -67,12 +70,16 @@ Refinery::Pages.configure do |config|
   # config.show_title_in_body = true
 
   # You can add new HTML elements not already supported by Loofah::HTML5::WhiteList::ALLOWED_ELEMENTS
-  # For more information on whitelist see ALLOWED_ELEMENTS 
+  # For more information on whitelist see ALLOWED_ELEMENTS
   # (https://github.com/flavorjones/loofah/blob/v2.0.3/lib/loofah/html5/whitelist.rb#L151)
   # config.add_whitelist_elements = ["source", "track"]
-  
+
   # You can add new HTML attributes not already supported by Loofah::HTML5::WhiteList::ALLOWED_ATTRIBUTES
-  # For more information on whitelist see ALLOWED_ATTRIBUTES 
+  # For more information on whitelist see ALLOWED_ATTRIBUTES
   # (https://github.com/flavorjones/loofah/blob/v2.0.3/lib/loofah/html5/whitelist.rb#L152)
   # config.add_whitelist_attributes = ["kind", "srclang", "placeholder", "controls", "required"]
+
+  # You can configure the site so that the home page is a model-index page
+  # config.home_page_path = "/"
+
 end

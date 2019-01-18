@@ -10,12 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181227120539) do
+ActiveRecord::Schema.define(version: 2019_01_18_031330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "refinery_authentication_devise_roles", force: :cascade do |t|
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "refinery_authentication_devise_roles", id: :serial, force: :cascade do |t|
     t.string "title"
   end
 
@@ -26,7 +47,7 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["user_id", "role_id"], name: "refinery_roles_users_user_id_role_id"
   end
 
-  create_table "refinery_authentication_devise_user_plugins", force: :cascade do |t|
+  create_table "refinery_authentication_devise_user_plugins", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
     t.integer "position"
@@ -34,7 +55,7 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["user_id", "name"], name: "refinery_user_plugins_user_id_name", unique: true
   end
 
-  create_table "refinery_authentication_devise_users", force: :cascade do |t|
+  create_table "refinery_authentication_devise_users", id: :serial, force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
     t.string "encrypted_password", null: false
@@ -68,15 +89,15 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["blog_category_id", "blog_post_id"], name: "index_blog_categories_blog_posts_on_bc_and_bp"
   end
 
-  create_table "refinery_blog_category_translations", force: :cascade do |t|
-    t.integer "refinery_blog_category_id", null: false
-    t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "refinery_blog_category_translations", id: :serial, force: :cascade do |t|
     t.string "title"
     t.string "slug"
+    t.string "locale", null: false
+    t.integer "refinery_blog_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["locale"], name: "index_refinery_blog_category_translations_on_locale"
-    t.index ["refinery_blog_category_id"], name: "index_a0315945e6213bbe0610724da0ee2de681b77c31"
+    t.index ["refinery_blog_category_id", "locale"], name: "index_refinery_b_c_t_on_refinery_blog_category_id_and_locale", unique: true
   end
 
   create_table "refinery_blog_comments", id: :serial, force: :cascade do |t|
@@ -92,18 +113,18 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["id"], name: "index_refinery_blog_comments_on_id"
   end
 
-  create_table "refinery_blog_post_translations", force: :cascade do |t|
-    t.integer "refinery_blog_post_id", null: false
-    t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "refinery_blog_post_translations", id: :serial, force: :cascade do |t|
     t.text "body"
     t.text "custom_teaser"
     t.string "custom_url"
     t.string "slug"
     t.string "title"
+    t.string "locale", null: false
+    t.integer "refinery_blog_post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["locale"], name: "index_refinery_blog_post_translations_on_locale"
-    t.index ["refinery_blog_post_id"], name: "index_refinery_blog_post_translations_on_refinery_blog_post_id"
+    t.index ["refinery_blog_post_id", "locale"], name: "index_refinery_b_p_t10s_on_refinery_blog_post_id_and_locale", unique: true
   end
 
   create_table "refinery_blog_posts", id: :serial, force: :cascade do |t|
@@ -126,18 +147,18 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["slug"], name: "index_refinery_blog_posts_on_slug"
   end
 
-  create_table "refinery_image_translations", force: :cascade do |t|
-    t.integer "refinery_image_id", null: false
-    t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "refinery_image_translations", id: :serial, force: :cascade do |t|
     t.string "image_alt"
     t.string "image_title"
+    t.string "locale", null: false
+    t.integer "refinery_image_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["locale"], name: "index_refinery_image_translations_on_locale"
-    t.index ["refinery_image_id"], name: "index_refinery_image_translations_on_refinery_image_id"
+    t.index ["refinery_image_id", "locale"], name: "index_2f245f0c60154d35c851e1df2ffc4c86571726f0", unique: true
   end
 
-  create_table "refinery_images", force: :cascade do |t|
+  create_table "refinery_images", id: :serial, force: :cascade do |t|
     t.string "image_mime_type"
     t.string "image_name"
     t.integer "image_size"
@@ -146,19 +167,20 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.string "image_uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "parent_id"
   end
 
-  create_table "refinery_page_part_translations", force: :cascade do |t|
-    t.integer "refinery_page_part_id", null: false
+  create_table "refinery_page_part_translations", id: :serial, force: :cascade do |t|
+    t.text "body"
     t.string "locale", null: false
+    t.integer "refinery_page_part_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "body"
     t.index ["locale"], name: "index_refinery_page_part_translations_on_locale"
-    t.index ["refinery_page_part_id"], name: "index_refinery_page_part_translations_on_refinery_page_part_id"
+    t.index ["refinery_page_part_id", "locale"], name: "index_93b7363baf444ecab114aab0bbdedc79d0ec4f4b", unique: true
   end
 
-  create_table "refinery_page_parts", force: :cascade do |t|
+  create_table "refinery_page_parts", id: :serial, force: :cascade do |t|
     t.integer "refinery_page_id"
     t.string "slug"
     t.integer "position"
@@ -169,20 +191,20 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["refinery_page_id"], name: "index_refinery_page_parts_on_refinery_page_id"
   end
 
-  create_table "refinery_page_translations", force: :cascade do |t|
-    t.integer "refinery_page_id", null: false
-    t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "refinery_page_translations", id: :serial, force: :cascade do |t|
     t.string "title"
     t.string "custom_slug"
     t.string "menu_title"
     t.string "slug"
+    t.string "locale", null: false
+    t.integer "refinery_page_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["locale"], name: "index_refinery_page_translations_on_locale"
-    t.index ["refinery_page_id"], name: "index_refinery_page_translations_on_refinery_page_id"
+    t.index ["refinery_page_id", "locale"], name: "index_refinery_page_t10s_on_refinery_page_id_and_locale", unique: true
   end
 
-  create_table "refinery_pages", force: :cascade do |t|
+  create_table "refinery_pages", id: :serial, force: :cascade do |t|
     t.integer "parent_id"
     t.string "path"
     t.boolean "show_in_menu", default: true
@@ -206,17 +228,17 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["rgt"], name: "index_refinery_pages_on_rgt"
   end
 
-  create_table "refinery_resource_translations", force: :cascade do |t|
-    t.integer "refinery_resource_id", null: false
+  create_table "refinery_resource_translations", id: :serial, force: :cascade do |t|
+    t.string "resource_title"
     t.string "locale", null: false
+    t.integer "refinery_resource_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "resource_title"
     t.index ["locale"], name: "index_refinery_resource_translations_on_locale"
-    t.index ["refinery_resource_id"], name: "index_refinery_resource_translations_on_refinery_resource_id"
+    t.index ["refinery_resource_id", "locale"], name: "index_35a57b749803d8437ea64c64da3fb2cb0fbf457a", unique: true
   end
 
-  create_table "refinery_resources", force: :cascade do |t|
+  create_table "refinery_resources", id: :serial, force: :cascade do |t|
     t.string "file_mime_type"
     t.string "file_name"
     t.integer "file_size"
@@ -240,7 +262,7 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["name"], name: "index_refinery_settings_on_name"
   end
 
-  create_table "seo_meta", force: :cascade do |t|
+  create_table "seo_meta", id: :serial, force: :cascade do |t|
     t.integer "seo_meta_id"
     t.string "seo_meta_type"
     t.string "browser_title"
@@ -257,9 +279,17 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.integer "taggable_id"
     t.string "tagger_type"
     t.integer "tagger_id"
-    t.string "context"
+    t.string "context", limit: 128
     t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context"
     t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
   create_table "tags", id: :serial, force: :cascade do |t|
@@ -268,4 +298,5 @@ ActiveRecord::Schema.define(version: 20181227120539) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end

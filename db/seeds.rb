@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-['Home', 'Blog', 'Event', 'About'].each do |page|
+['Home', 'Blog', 'Event', 'About', 'Search'].each do |page|
   new_page = Refinery::Page.new(title: page, slug: page)
   new_page.link_url = '/' if page == 'Home'
   new_page.save

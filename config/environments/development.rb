@@ -28,7 +28,9 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   if config.respond_to?(:action_mailer)
-    config.action_mailer.raise_delivery_errors = false
+  if config.respond_to?(:action_mailer)
+      config.action_mailer.raise_delivery_errors = false
+  end
   end
 
   config.action_mailer.perform_caching = false

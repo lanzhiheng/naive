@@ -20,6 +20,11 @@ Refinery::Core.configure do |config|
   # Google Analytics are made.
   # config.google_analytics_page_code = "UA-xxxxxx-x"
 
+  # This activates Matomo open web analytics tracking within your website. If the server config is
+  # left blank or set to analytics.example.org then the javascript tracking code will not be loaded.
+  # config.matomo_analytics_server = "analytics.example.org"
+  # config.matomo_analytics_site_id = "123"
+
   # Enable/disable authenticity token on frontend
   # config.authenticity_token_on_frontend = false
 

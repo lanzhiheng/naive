@@ -19,6 +19,9 @@ Refinery::Images.configure do |config|
   # Configure image sizes
   # config.user_image_sizes = {:small=>"110x110>", :medium=>"225x255>", :large=>"450x450>"}
 
+  # Configure image ratios
+  # config.user_image_ratios = {:"16/9"=>"1.778", :"4/3"=>"1.333", :"1:1"=>1}
+
   # Configure white-listed mime types for validation
   # config.whitelisted_mime_types = ["image/jpeg", "image/png", "image/gif", "image/tiff"]
 
@@ -34,7 +37,7 @@ Refinery::Images.configure do |config|
 
   config.dragonfly_name = :refinery_images
   # config.dragonfly_verify_urls = true
-  # config.dragonfly_secret = "83c072984e3c9a89e421dc849114ea87260c52ad6af221c7"
+  # config.dragonfly_secret = "43a9c38f2e1628e78353f68394cb6d0e3cc722550f814b08"
   # config.dragonfly_url_host = ""
   # config.dragonfly_datastore_root_path = "/Users/lan/Personal/naive/public/system/refinery/images"
   # config.dragonfly_url_format = "/system/refinery/images/:job/:basename.:ext"
