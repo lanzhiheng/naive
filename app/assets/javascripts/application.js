@@ -15,6 +15,7 @@
 
 //= require jquery3
 //= require popper
+//= require highlight.pack
 //= require bootstrap-sprockets
 //= require_self
 

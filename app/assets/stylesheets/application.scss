@@ -14,6 +14,9 @@
 @import 'refinery/formatting';
 @import 'refinery/theme';
 
+// highlight.js stylesheet
+@import 'railscasts';
+
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import 'bootstrap';
 
