@@ -21,7 +21,7 @@
       <span class="categories">
         Categories:
         <% @post.categories.each do |category| %>
-        <%= link_to category.title, '/' %>
+        <%= link_to category.title, refinery.blog_category_path(category) %>
         <% end %>
       </span>
       <span class="author">
