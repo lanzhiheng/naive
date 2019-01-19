@@ -1,4 +1,8 @@
 Refinery::Blog::Post.class_eval do
+  # TODO: Bug of blog post.
+  attr_accessor :browser_title
+  attr_accessor :meta_description
+
   def html_body
     markdown_to_html(body)
   end
