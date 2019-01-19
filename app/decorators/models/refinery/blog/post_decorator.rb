@@ -9,7 +9,7 @@ Refinery::Blog::Post.class_eval do
 
   def intro
     return custom_teaser if custom_teaser.present?
-    markdown_to_html(body).truncate(100)
+    Sanitize.fragment(markdown_to_html(body)).strip.truncate(100)
   end
 
   def should_generate_new_friendly_id?

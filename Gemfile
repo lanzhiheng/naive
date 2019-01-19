@@ -6,9 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem 'pg', '~> 1.1.3'
-gem 'mysql2'
 gem 'bootstrap', '~> 4.2.1'
 gem 'redcarpet', '~> 2.3.0'
+gem 'sanitize'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

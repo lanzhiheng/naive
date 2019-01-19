@@ -113,8 +113,9 @@ module Refinery
       end
 
       it "intro method" do
-        post = create(:ruby, custom_teaser: '')
-        expect(post.intro).to eq(@markdown_renderer.render(post.body).truncate(100))
+        post = create(:ruby, custom_teaser: '', body: '<h1>lanzhiheng</h1>' * 10)
+        body = Sanitize.fragment(@markdown_renderer.render(post.body)).strip
+        expect(post.intro).to eq(body.truncate(100))
 
         post.custom_teaser = 'Hello World'
         expect(post.intro).to eq('Hello World')
