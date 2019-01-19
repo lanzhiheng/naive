@@ -23,6 +23,5 @@ RSpec.describe ApplicationHelper, type: 'helper' do
     expect(foreign_link_resource).to include('fontawesome')
     expect(foreign_link_resource).to include('integrity')
     expect(foreign_link_resource).to include('crossorigin')
-    expect(foreign_link_resource).to include('github-markdown')
   end
 end

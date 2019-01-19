@@ -26,8 +26,6 @@ module ApplicationHelper
       crossorigin: 'anonymous'
     )
 
-    github_markdown = stylesheet_link_tag( "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css")
-
-    [fontawesome, github_markdown].join('').html_safe
+    [fontawesome].join('').html_safe
   end
 end
