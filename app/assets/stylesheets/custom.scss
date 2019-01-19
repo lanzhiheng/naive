@@ -1,5 +1,13 @@
 $detail-color: #ececec;
 
+html {
+  font-size: 16px;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 14px;
+  }
+}
+
 body {
   background: #f9f9f9;
   padding-top: 4.5rem;
@@ -119,7 +127,6 @@ img {
 
 /** detail page **/
 .detail-title {
-  font-size: 3rem;
   font-weight: 800;
   position: relative;
 
@@ -137,7 +144,8 @@ img {
 }
 
 .detail-content {
-  padding: 0 6.875rem;
+  width: 70%;
+  margin: 0 auto;
 
   .post-footer {
     a {
@@ -149,7 +157,13 @@ img {
       width: 1.5rem;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
 }
+
+
 
 .post-details {
   text-align: center;
@@ -158,8 +172,10 @@ img {
 }
 
 .comments {
-  width: 600px;
   margin: 30px auto;
+  padding: 1em;
+  max-width: 600px;
+  width: 100%;
 
   .flash {
     color: #ff7a00;
@@ -224,7 +240,7 @@ img {
 .blog-post {
   .markdown-body {
     font-weight: 300;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 
     a {
       color: $success;
@@ -236,8 +252,28 @@ img {
       font-weight: bold;
     }
 
-    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    h1, h2, h3, h4, h5, h6 {
       margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+    }
+
+    h5 {
+      font-size: 1.1rem;
+    }
+
+    h6 {
+      font-size: 1rem;
     }
 
     code {
