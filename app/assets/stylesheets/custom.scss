@@ -1,4 +1,4 @@
-$detail-color: #ececec;
+$detail-color: #adadad;
 
 html {
   font-size: 16px;
@@ -17,14 +17,28 @@ img {
   max-width: 100%;
 }
 
+.navbar-light .navbar-nav .nav-link.active {
+  color: $success;
+}
+
 .blog-image {
   width: 100%
+}
+
+#main_content {
+  .card-text {
+    font-weight: 300;
+  }
 }
 
 .card {
   border-radius: 0.15rem;
 
-  .card-body {
+  .card-text {
+    font-size: 0.875rem;
+  }
+
+                 .card-body {
     .avatar {
       text-align: center;
       margin-bottom: 1rem;
@@ -65,11 +79,6 @@ img {
     position: absolute;
     bottom: -0.5rem;
   }
-}
-
-.card-text {
-  font-size: 0.875rem;
-  font-weight: 300;
 }
 
 .post-footer {
@@ -120,6 +129,7 @@ img {
 }
 
 #search_box {
+  flex-flow: row;
   input, button {
     border-radius: 0.1rem;
   }
@@ -135,7 +145,7 @@ img {
     background: $success;
     display: inline-block;
     width: 0.66667em;
-    height: 0.03333em;
+    height: 0.05em;
     position: absolute;
     bottom: -0.28333em;
     left: 50%;
@@ -171,6 +181,7 @@ img {
   color: $detail-color;
 }
 
+/** Stylesheet for comments **/
 .comments {
   margin: 30px auto;
   padding: 1em;
@@ -193,7 +204,7 @@ img {
       width: 100%;
       display: block;
       margin: 0.2rem auto 1.5rem;
-      border: 1px solid $detail-color;
+      border: 1px solid #dee2e6;
       border-radius: 2px;
       font-size: 1rem;
       padding: 0.3rem 0.5rem;

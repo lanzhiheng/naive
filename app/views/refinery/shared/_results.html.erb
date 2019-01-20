@@ -7,7 +7,9 @@
         <% if @posts.any? %>
         <div id="blog_posts" class="row">
           <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-          <%= will_paginate @posts %>
+          <div class="col-sm-12">
+            <%= will_paginate @posts %>
+          </div>
         </div>
         <% else %>
         <p>
@@ -15,9 +17,8 @@
         </p>
         <% end %>
       </section>
-
     </div>
-    <div class="col-lg-4 col-md-5 col-sm-12">
+    <div class="col-lg-4 col-md-5 col-sm-8">
       <%= render "/refinery/sidebar" %>
     </div>
   </div>

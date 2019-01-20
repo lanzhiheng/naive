@@ -10,9 +10,8 @@
       <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(@post.published_at.to_date)) %>
     </time>
   </section>
-  <img src="https://placekitten.com/1366/768" class="banner-image" />
-  <div class="detail-content mt-5">
-    <div class="detail-content-inner border-top py-5">
+  <div class="detail-content mt-4">
+    <div class="detail-content-inner border-top py-4">
       <article class="markdown-body">
         <%= @post.html_body.html_safe %>
       </article>
