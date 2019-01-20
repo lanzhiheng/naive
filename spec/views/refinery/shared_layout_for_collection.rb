@@ -18,6 +18,9 @@ module Refinery
 
     def share_assert(template_name)
       render :template => template_name
+
+      yield rendered if block_given?
+
       expect(rendered).to have_css('#main_content')
       expect(rendered).to have_content(@docker.title)
       expect(rendered).to have_content(@ruby.title)
@@ -29,16 +32,29 @@ module Refinery
       expect(rendered).to have_css('#categories_wrapper')
     end
 
+    it "blog posts page" do
+      share_assert 'refinery/blog/posts/index.html.erb'
+      expect(rendered).not_to have_content('Searching:')
+      expect(rendered).not_to have_content('Category:')
+      expect(rendered).not_to have_content('Tag:')
+    end
+
     it "search results page" do
-      share_assert 'refinery/pages/_search.html.erb'
+      share_assert 'refinery/pages/_search.html.erb' do |rendered|
+        expect(rendered).to have_content('Searching:')
+      end
     end
 
     it "tagged results page" do
-      share_assert 'refinery/blog/posts/tagged.html.erb'
+      share_assert 'refinery/blog/posts/tagged.html.erb' do |rendered|
+        expect(rendered).to have_content('Tag:')
+      end
     end
 
     it "categories results page" do
-      share_assert 'refinery/blog/categories/show.html.erb'
+      share_assert 'refinery/blog/categories/show.html.erb' do |rendered|
+        expect(rendered).to have_content('Category:')
+      end
     end
   end
 end

@@ -1,0 +1,24 @@
+<div class="container">
+  <%= yield :title_section %>
+
+  <div class="row">
+    <div class="col-lg-8 col-md-7 col-sm-12">
+      <section id="main_content" >
+        <% if @posts.any? %>
+        <div id="blog_posts" class="row">
+          <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+          <%= will_paginate @posts %>
+        </div>
+        <% else %>
+        <p>
+          <%= t('.no_posts') %>
+        </p>
+        <% end %>
+      </section>
+
+    </div>
+    <div class="col-lg-4 col-md-5 col-sm-12">
+      <%= render "/refinery/sidebar" %>
+    </div>
+  </div>
+</div>

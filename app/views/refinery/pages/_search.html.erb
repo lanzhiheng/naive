@@ -1,23 +1,5 @@
-<div class="container">
-  <h3>Searching: "<%= params[:q] %>"</h3>
-  <div class="row">
-    <div class="col-sm-8">
-      <section id="main_content" >
-        <% if @posts.any? %>
-        <div id="blog_posts" class="row">
-          <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-          <%= will_paginate @posts %>
-        </div>
-        <% else %>
-        <p>
-          <%= t('.no_posts') %>
-        </p>
-        <% end %>
-      </section>
+<%= content_for :title_section do %>
+<h3>Searching: "<%= params[:q] %>"</h3>
+<% end %>
 
-    </div>
-    <div class="col-sm-4">
-      <%= render "/refinery/sidebar" %>
-    </div>
-  </div>
-</div>
+<%= render partial: '/refinery/shared/results' %>
