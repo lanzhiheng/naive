@@ -1,8 +1,0 @@
-#content .ui-tabs a {
-  border: 1px solid transparent;
-}
-
-#content .editor-toolbar a.active,
-#content .editor-toolbar a:hover {
-  border-color: #95a5a6;
-}

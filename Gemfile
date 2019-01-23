@@ -66,8 +66,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'markdown-editor', path: 'markdown-editor'
-
 # Refinery CMS
 gem 'refinerycms', git: 'https://github.com/refinery/refinerycms.git', branch: 'master'
 gem 'refinerycms-authentication-devise', git: 'https://github.com/refinery/refinerycms-authentication-devise.git', branch: 'master'
