@@ -8,3 +8,7 @@ Personal blog system powered by RefineryCMS.
 - Rails 5.2.2
 - RefineryCMS
 - Markdown https://simplemde.com/(Not Maintain)
+
+## Plugin
+
+- Markdown editor [Developing]
