@@ -1,4 +1,12 @@
 GIT
+  remote: git@github.com:lanzhiheng/refinerycms-markdown.git
+  revision: 56f57221a72c0ea83e5c577a43387cf9c24b7627
+  branch: master
+  specs:
+    refinerycms-markdown (0.1.0)
+      rails (>= 5.1.0)
+
+GIT
   remote: https://github.com/refinery/refinerycms-authentication-devise.git
   revision: bd5861555f590d6d1c29614b1911029e7cf74805
   branch: master
@@ -422,6 +430,7 @@ DEPENDENCIES
   refinerycms!
   refinerycms-authentication-devise!
   refinerycms-blog!
+  refinerycms-markdown!
   rspec-rails (~> 3.8)
   sanitize
   sass-rails (~> 5.0)
