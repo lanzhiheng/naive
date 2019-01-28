@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:lanzhiheng/refinerycms-markdown.git
-  revision: 56f57221a72c0ea83e5c577a43387cf9c24b7627
+  revision: a0432cd420a4a61ea043dd4ea58d90e80b2488f2
   branch: master
   specs:
     refinerycms-markdown (0.1.0)
