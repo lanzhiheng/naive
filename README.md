@@ -11,3 +11,4 @@ Personal blog system powered by RefineryCMS.
 ## Plugin
 
 - Markdown editor
+- comments system
