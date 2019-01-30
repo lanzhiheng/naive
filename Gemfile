@@ -72,7 +72,7 @@ gem 'refinerycms-authentication-devise', git: 'https://github.com/refinery/refin
 
 # Optionally, specify additional Refinery CMS Extensions here:
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog.git', branch: 'feature/refinery-5'
-gem 'refinerycms-markdown', git: 'git@github.com:lanzhiheng/refinerycms-markdown.git', branch: 'master'
+gem 'refinerycms-markdown', git: 'https://github.com/lanzhiheng/refinerycms-markdown.git', branch: 'master'
 #  gem 'refinerycms-inquiries', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-search', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-page-images', ['~> 4.0', '>= 4.0.0']
